@@ -7,7 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+@Entity //jpa가 관리하는 object에 붙여줌
 @Data //롬복 -> 외부에서 getter setter 로 접근할 수 있게하는듯
 public class Board {
 
