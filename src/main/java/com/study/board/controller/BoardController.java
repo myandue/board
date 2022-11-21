@@ -23,11 +23,14 @@ public class BoardController {
     }
 
     @PostMapping("/board/write")
-    public String boardWritePro(Board board){
+    public String boardWritePro(Board board, Model model){
         //Board board 매개변수는 entity를 통해 param들을 통째로 가져오는 방식.
         boardService.write(board);
 
-        return "redirect:/board/list";
+        model.addAttribute("message","글 작성이 완료되었습니다.");
+        model.addAttribute("searchUrl","/board/list"); //redirect할 주소 전달
+
+        return "message"; //이러면 message라는 파일을 찾는거 아냐?
     }
 
     @GetMapping("/board/list")
