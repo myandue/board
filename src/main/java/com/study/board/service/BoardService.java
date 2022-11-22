@@ -27,11 +27,6 @@ public class BoardService {
         return boardRepository.findById(id).get();
     }
 
-    //특정 게시글 수정 처리
-    public Board boardModify(Integer id){
-        return boardRepository.findById(id).get();
-    }
-
     //특정 게시글 삭제 처리
     public void delete(Integer id){
         boardRepository.deleteById(id);

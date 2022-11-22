@@ -30,7 +30,7 @@ public class BoardController {
         model.addAttribute("message","글 작성이 완료되었습니다.");
         model.addAttribute("searchUrl","/board/list"); //redirect할 주소 전달
 
-        return "message"; //이러면 message라는 파일을 찾는거 아냐?
+        return "message"; //이러면 message라는 파일을 찾는거 아냐? 맞넼ㅋㅋㅋ 바본가
     }
 
     @GetMapping("/board/list")
@@ -57,15 +57,13 @@ public class BoardController {
     }
 
     @PostMapping("/board/modify/{id}")
-    public String boardModifyPro(@PathVariable("id") Integer id, Board board){
+    public String boardModifyPro(Model model, Board board){
 
-        Board boardTemp = boardService.boardView(id);
-        boardTemp.setTitle(board.getTitle());
-        boardTemp.setContent(board.getContent());
+        boardService.write(board);
 
-        //boardService.write(board);
-        //위처럼 작성해도 새롭게 작성되는게 아니라 수정이 반영되던데..?
-        return "redirect:/board/list";
+        model.addAttribute("message","글 수정이 완료되었습니다.");
+        model.addAttribute("searchUrl","/board/list");
+        return "message";
         //write 이랑 modify 상세페이지로 redirect 하고 싶음.
     }
 
