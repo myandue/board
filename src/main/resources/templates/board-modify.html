@@ -22,9 +22,10 @@
 </style>
 <body>
 <div class="layout">
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <input name="title" type="text" th:value="${article.title}">
         <textarea name="content" th:text="${article.content}"></textarea>
+        <input type="file" name="file">
         <button type="submit">수정</button>
     </form>
 </div>
