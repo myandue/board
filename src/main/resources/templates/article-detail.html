@@ -9,7 +9,7 @@
 <h1 th:text="${article.title}"></h1>
 <p th:text="${article.content}"></p>
 <img th:src="@{${article.filepath}}">
-<a th:href="@{/board/modify/{id}(id=${article.id})}">수정</a>
+<a th:href="@{/board/{id}/modify(id=${article.id})}">수정</a>
 <a th:href="@{/board/delete(id=${article.id})}">삭제</a>
 </body>
 </html>
