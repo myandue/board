@@ -1,6 +1,13 @@
 # board
 
 <hr>
+<div>
+    <h3>사용 기술</h3>
+    <h5>-. JAVA</h5>
+    <h5>-. Spring</h5>
+    <h5>-. JPA</h5>
+</div>
+
 
 <div>
   <h3>변경해야 할 부분</h3>
